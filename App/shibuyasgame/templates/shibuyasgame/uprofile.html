@@ -1,0 +1,31 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+{% if profile.pic %}<img src="{{profile.pic}}"/><br>{% endif %}
+<h2>{{profile.user.first_name}}{% if profile.role != N %}{% endif %}
+  <div class="right">
+  {% if you.user == profile.user %}
+  <a href="{% url 'settings' %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+  {% endif %}
+  {% if perms.shibuyasgame.can_edit_userprofiles %}
+  <a class="admin" href="{% url 'adminEditUser' profile.user %}"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+  {% endif %}
+  </div>
+</h2>
+<br>
+Permission Groups: {% for group in profile.user.groups.all %}[{{group}}]{% endfor %}<br>
+{% if profile.age %}Age: {{profile.age}}<br>{% endif %}
+{% if profile.bio %}Bio: {{profile.bio|linebreaks}}<br>{% endif %}
+{% if profile.loc %}Location: {{profile.loc}}<br>{% endif %}
+{% if profile.timezone %}Timezone: {{profile.timezone}}<br>{% endif %}
+{% if profile.skype %}Skype: {{profile.skype}}<br>{% endif %}
+<br>
+Characters:
+<ul>
+  {% for char in chars %}
+  <li><a href="{% url 'cprofile' char.char_name char.suffix %}">{{char.char_name}}</a></li>
+  {% empty %}
+  No characters yet!
+  {% endfor %}
+</ul>
+{% endblock %}

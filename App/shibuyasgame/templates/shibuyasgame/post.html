@@ -1,0 +1,20 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+<form id="postform" action="/post" method="POST">
+  <table>
+    {% for field in form.visible_fields %}
+    <tr>
+      <td>{{field.label_tag}}</td>
+      <td>{{field}}</td>
+      <td class="error">
+          {% for error in field.errors %} {{error}} {% endfor %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <input type="submit" value="Post"/>
+  {% csrf_token %}
+</form>
+{% for error in field.errors %} <p class="error">{{error}}</p> {% endfor %}
+{% endblock %}

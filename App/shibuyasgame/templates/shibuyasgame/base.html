@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% load staticfiles %}
+  <link rel="shortcut icon" href="http://68.media.tumblr.com/avatar_bd60b5345e1c_128.png">
+  <link rel="stylesheet" href="{% static 'shibuyasgame/shibuyasgame.css' %}" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="{% static 'shibuyasgame/profile.css' %}" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://use.fontawesome.com/1cdaab7178.js"></script>
+  <script src="{% static 'shibuyasgame/shibuyasgame.js' %}" type="text/javascript"></script>
+  {% if redirect %}
+    <script src="{% static 'shibuyasgame/redirect.js' %}" type="text/javascript"></script>
+  {% endif %}
+  {% block imports %}{% endblock %}
+  <title>{% block title %}The Reaper's Game{% endblock %}</title>
+</head>
+
+
+
+<body>
+<!-- Topnav -->
+<div class="topnav">
+  <div class="left">
+    <a href="{% url 'home' %}">The Reaper's Game</a>
+  </div>
+  <div class="right">
+    {% if you %}
+    <a href="{% url 'uprofile' you.user.username %}">{{you.user.first_name}}</a>&emsp;
+    <a href="{% url 'settings' %}">Settings</a>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Sidenav -->
+<div class="sidenav">
+  <!-- links -->
+  <a href="{% url 'home' %}" id="logo"><img src="http://imgur.com/zEIWyrA.png"/></a>
+  <div class="links">
+    <a href="{% url 'home' %}">Home</a>
+    {% if you %}
+    <a href="{% url 'uprofile' you.user.username %}">{{you.name}}</a>
+    <a href="{% url 'createChar' %}">Create Character</a>
+    {% else %}
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <br>
+    <a href="{% url 'searchLanding' %}">Search People</a>
+    <a href="{% url 'allUsers' %}">User List</a>
+    <a href="{% url 'allChars' %}">Character List</a>
+    <a href="{% url 'items' %}">Item List</a>
+    {% if perms.shibuyasgame.is_mod %}
+    <div class="adminlinks">
+      <span>Mod Tools</span>
+      {% if perms.shibuyasgame.can_post %}
+      <a href="{% url 'post' %}">Post</a>
+      {% endif %}
+      <a href="{% url 'createItem' 'pin' %}">Create Pin</a>
+      <a href="{% url 'createItem' 'thread' %}">Create Thread</a>
+      <a href="{% url 'createItem' 'food' %}">Create Food</a>
+      {% block otherModTools %}
+      {% endblock %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+<div class="content">
+{% if contentTitle %}<div class="content-title">{{contentTitle|safe|capfirst}}</div>{% endif %}
+{% block content %}
+{% endblock %}
+</div>
+</div>
+
+<div id="errorcorner"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+<h4>Food</h4>
+{% for food in foods %}
+<div>{{food.name}}{% if food.heal != 0 %}— Heals {% if food.heal < 0 %}to Full{% else %}{{food.heal}}HP{% endif %}{% endif %}
+  <div>
+    {% if food.bonus_hp != 0 %} {% if food.bonus_hp > 0 %}+{{food.bonus_hp}}HP{% endif %}{% endif %}
+    {% if food.bonus_atk != 0 %} {% if food.bonus_atk > 0 %}+{{food.bonus_atk}}ATK{% endif %}{% endif %}
+    {% if food.bonus_def != 0 %} {% if food.bonus_def > 0 %}+{{food.bonus_def}}DEF{% endif %}{% endif %}
+  </div>
+</div><br/>
+{% endfor %}
+<h4>Threads</h4>
+{% for thread in threads %}
+<div>#{{thread.code}}: {{thread.name}} ({{thread.thread_type}})<br/>
+  <div>
+    {% if thread.base_hp != 0 %} {% if thread.base_hp > 0 %}+{{thread.base_hp}}HP{% endif %}{% endif %}
+    {% if thread.base_atk != 0 %} {% if thread.base_atk > 0 %}+{{thread.base_atk}}ATK{% endif %}{% endif %}
+    {% if thread.base_def != 0 %} {% if thread.base_def > 0 %}+{{thread.base_def}}DEF{% endif %}{% endif %}
+    {% if thread.eff %}</br>—{{thread.eff}}{% endif %}
+  </div>
+</div><br/>
+{% endfor %}
+<h4>Pins</h4>
+{% for pin in pins %}
+<div>#{{pin.code}}: {{pin.name}}<br/>
+  <div>{{pin.atk}} ATK{% if pin.eff %}—{{pin.eff}}{% endif %}</div>
+</div><br/>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+{% for field in form.visible_fields %}
+{% for error in field.errors %}<div class="error">{{error}}</div>{% endfor %}
+{% endfor %}
+{% for field in form2.visible_fields %}
+{% for error in field.errors %}<div class="error">{{error}}</div>{% endfor %}
+{% endfor %}
+<form enctype="multipart/form-data" action="{{action}}" method="post">
+  <table>
+  {% for form in forms %}
+    {% for field in form.visible_fields %}
+    <tr>
+      <td>{{field.label_tag}}</td>
+      <td>{{field}}</td>
+    </tr>
+    {% endfor %}
+  {% endfor %}
+</table>
+<input type="submit" value="{{button}}"/>
+{% csrf_token %}
+</form>
+
+<div id="queryresults">
+{% if userresults %}
+  <h4>Users</h4>
+  {% for result in userresults %}
+    <div class="result"><a href="{% url 'uprofile' result.user.username %}">{{result.user.first_name}}</a></div>
+  {% endfor %}
+{% endif %}
+{% if charresults %}
+  <h4>Characters</h4>
+  {% for result in charresults %}
+    <div class="result"><a href="{% url 'cprofile' result.char_name result.suffix %}">{{result.char_name}}</div>
+  {% endfor %}
+{% endif %}
+{% if POST and not userresults and not charresults %}
+No results found.
+{% endif %}
+</div>
+{% endblock %}

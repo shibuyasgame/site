@@ -1,0 +1,20 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+{% for post in posts %}
+<div class="post">
+  <div class="clear">
+  <div class="left post-title">{{post.title}}</div>
+    {% if perms.shibuyasgame.can_post %}
+    <a class="admin right" href="{% url 'editPost' post.id %}">Edit</a><br><br>
+    {% endif %}
+  </div>
+  {{post.text|safe}}
+  <div class="post-details">⸺ by
+    <a href="{% url 'uprofile' post.author.user.username %}">
+      {{post.author.user.first_name}}</a> on
+      <a href="{% url 'viewPost' post.id %}">{{post.time}}</a></div>
+
+</div>
+{% endfor %}
+{% endblock %}
