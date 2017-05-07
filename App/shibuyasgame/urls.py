@@ -50,4 +50,5 @@ urlpatterns = [
     url(r'^admin/add/c/(?P<charname>[a-zA-Z0-9_@\+\-]+)(?P<suffix>[Wek0-9\)\(_]*)/(?P<itemtype>[a-z])$', admin.addToInventory, name="addItem"),
     url(r'^admin/remove/c/(?P<charname>[a-zA-Z0-9_@\+\-]+)(?P<suffix>[Wek0-9\)\(_]*)/(?P<itemtype>[a-z])$', admin.deleteFromInventory, name="removeItem"),
     # Queries
+    url(r'^serverTime', query.getServerTime, name="getTime"),
 ]

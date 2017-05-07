@@ -1,15 +1,16 @@
+import pytz
 from django.db import models
 
 # User class for built-in authentication module
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+from timezone_field import TimeZoneField
 
 '''
 req_mod is a flag that when set, adds requests involving this item to the
 mod queue so that the mods can deal with them
 '''
-
 
 class UserProfile(models.Model):
     ROLES = (
@@ -30,15 +31,20 @@ class UserProfile(models.Model):
     loc = models.CharField(max_length=100, blank=True, null=True)
     skype = models.CharField(max_length=100, blank=True, null=True)
     blog = models.CharField(max_length=100, blank=True, null=True)
-    timezone = models.CharField(max_length=100, blank=True, null=True)
+    timezone = TimeZoneField(default='US/Eastern')
     pic = models.CharField(blank=True, max_length=256)
 
     is_shopkeep = models.BooleanField(default=False)
 
 
+class LogEntry(models.Model):
+    perp = models.ForeignKey(UserProfile, related_name="log_entries")
+    action = models.CharField(max_length=100)
+    details = models.CharField(max_length=10000)
+    time = models.DateTimeField(auto_now_add=True)
 
 class CharProfile(models.Model):
-    mun = models.ForeignKey(UserProfile)
+    mun = models.ForeignKey(UserProfile, related_name="characters")
     suffix = models.CharField(max_length=32, blank=True, null=True) # In case char_name isn't unique
     char_name = models.CharField(max_length=32)
     first_name = models.CharField(max_length=32)
@@ -56,12 +62,12 @@ class CharStats(models.Model):
         ('F', 'She/Her'),
         ('N', 'They/Them'),
     )
-    character = models.ForeignKey(CharProfile, related_name="character")
+    character = models.ForeignKey(CharProfile, related_name="stats")
     week = models.SmallIntegerField()
     pic = models.CharField(blank=True, max_length=256)
     pronouns = models.CharField(max_length=1, choices=PRONOUNS)
-    partner = models.ForeignKey(CharProfile, related_name="partner", blank=True, null=True)
-    role = models.CharField(max_length=32, default="Unknown")
+    partner = models.OneToOneField(CharProfile, related_name="partner", blank=True, null=True)
+    role = models.CharField(max_length=32, default="")
     age = models.CharField(max_length=10, blank=True, null=True)
     bio = models.CharField(max_length=1000, blank=True, null=True)
     fee = models.CharField(max_length=1000, blank=True, null=True)
@@ -93,6 +99,7 @@ class Pin(models.Model): # Pin is the in-universe name for weapons/spells
     eff = models.CharField(max_length=128)
     brand = models.CharField(max_length=32)
     booster = models.BooleanField(default=False)
+    evo = models.ManyToManyField("Pin", blank=True, related_name="evo_from")
     req_mod = models.BooleanField(default=False)
 
     def __str__(self):
@@ -161,14 +168,27 @@ class Item(models.Model): # Used to keep track of things in inventory
         return str(item_type.get_object_for_this_type(pk=item_id).name)
 
 class TradeRequest(models.Model):
-    requester = models.ForeignKey(CharProfile, related_name="giver")
-    recipient = models.ForeignKey(CharProfile, related_name="receiver")
-    yen = models.IntegerField(default=0)
-    item = models.ForeignKey(Item, null=True, blank=True)
+    requester = models.ForeignKey(CharProfile, related_name="trade_giver")
+    recipient = models.ForeignKey(CharProfile, related_name="trade_recipient")
+    yen = models.PositiveIntegerField(default=0)
+    item = models.ForeignKey(Item, null=True, blank=True, related_name="trades")
     request_time = models.DateTimeField(auto_now_add=True)
 
 class Post(models.Model):
     text = models.TextField()
     title = models.CharField(max_length=128, blank=True, null=True)
-    author = models.ForeignKey(UserProfile)
+    author = models.ForeignKey(UserProfile, related_name="posts")
     time = models.DateTimeField(auto_now_add=True)
+
+class Shop(models.Model):
+    name = models.CharField(max_length=32)
+    owners = models.ManyToManyField(UserProfile, related_name="shops")
+    max_stock = models.ForeignKey(Item, related_name="where_stock")
+    curr_stock = models.ForeignKey(Item, related_name="in_stock")
+
+class ModRequest(models.Model):
+    user = models.ForeignKey(UserProfile, related_name="requests")
+    text = models.CharField(max_length=128)
+    time = models.DateTimeField(auto_now_add=True)
+    handled = models.BooleanField(default=False)
+    handler = models.ForeignKey(UserProfile, related_name="handled")

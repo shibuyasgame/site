@@ -1,0 +1,263 @@
+X,Name,Rec Price (¥),Min Price (¥),Evolves From,Evolves To,ATK,Additional Info,Brand
+#001,Ice Blown,¥1600,¥800,---,002,13,,D+B
+#002,Ice Risers,¥2500,¥1000,001,---,21,,D+B
+#003,Frozen Cool,¥4000,¥2000,---,004,33,,D+B
+#004,Blizzard Cool,¥4300,¥2000,004,---,36,,D+B
+#005,Earthshake,¥7000,¥4000,---,---,24,Attack all enemies. Flip to Stun all.,D+B
+#006,Sexy D,¥1600,¥800,---,007,13,,D+B
+#007,Sexy +,¥1800,¥900,007,008,15,,D+B
+#008,Sexy B,¥2200,¥1100,008,---,17,,D+B
+#009,Straitjacket,¥7000 (BAN),¥3500 (BAN),---,---,,Stuns are extended to two turns.,D+B
+#010,Blown Kiss,¥10000,¥5000,---,---,,Heal 50%. Doesn't take up a turn. Auto activates at 50% HP or lower. Uses cannot be increased.,D+B
+#011,D+B,¥10000,¥10000,---,---,,Increase D+B pin attack by 50%.,D+B
+#012,Happy Beam,¥4000,¥2000,---,013; 015,17,Attack two times.,Natural Puppy
+#013,Natural Magnum,¥4300,¥2000,012,014; 017,18,Attack two times.,Natural Puppy
+#014,Wonder Magnum,¥6700,¥3000,013,---,28,Attack two times.,Natural Puppy
+#015,Beauty Launcher,¥4300,¥2000,012,---,18,Attack two times.,Natural Puppy
+#016,One Love Magnum,¥8400,¥4200,---,017; 019,35,Attack two times.,Natural Puppy
+#017,Hounder Magnum,¥8600,¥4500,013; 016,018; 020,36,Attack two times.,Natural Puppy
+#018,Bear Hug Magnum,¥10500,¥5200,017,021,43,Attack two times.,Natural Puppy
+#019,Sparkle Beam,¥8400,¥4200,016,---,35,Attack two times.,Natural Puppy
+#020,Lil' Terror Bazooka,¥10800,¥5400,017,---,45,Attack two times.,Natural Puppy
+#021,Angel Magnum,¥12200,¥6000,018,---,51,Attack two times.,Natural Puppy
+#022,Cutie Beam,¥1700,¥800,---,023,14,,Natural Puppy
+#023,Lovely Beam,¥2400,¥1000,022,024; 025,20,,Natural Puppy
+#024,Sexy Beam,¥3700,¥1500,023,027,31,,Natural Puppy
+#025,Superfine Beam,¥3600,¥1500,023,028,30,,Natural Puppy
+#026,Playmate Beam,¥5200,¥2200,---,---,43,,Natural Puppy
+#027,Purity Launcher,¥3400,¥1500,024,---,28,,Natural Puppy
+#028,Innocence Beam,¥4300,¥2000,025,---,36,,Natural Puppy
+#029,Pop Pendulum,¥3600,¥1500,---,---,20,Flip to attack again.,Natural Puppy
+#030,Casual Pendulum,¥6800,¥3300,---,---,38,Flip to attack again.,Natural Puppy
+#031,Love Me Tether,¥1700,¥800,---,032; 033,14,Flip up to five times until you get tails. Attack for each heads. Flip after for DEF Break.,Natural Puppy
+#032,Pamper Me Tether,¥3000,¥1500,031,---,26,Flip up to five times until you get tails. Attack for each heads. Flip after for DEF Break.,Natural Puppy
+#033,Sweet Talk Tether,¥4000,¥2000,031,---,35,Flip up to five times until you get tails. Attack for each heads. Flip after for DEF Break.,Natural Puppy
+#034,Natural Puppy,¥10000,¥10000,---,---,,Increase Natural Puppy pin attack by 50%.,Natural Puppy
+#035,Frantic,¥3000,¥1500,---,---,26,Attack all enemies. Flip to Stun for each enemy.,Pavo Real
+#036,Blink Step,¥1000,¥500,---,---,,Flip to dodge.,Pavo Real
+#037,First Gear,¥1000,¥500,---,---,,Flip to dodge.,Pavo Real
+#038,Top Gear,¥1000,¥500,---,---,,Flip to dodge.,Pavo Real
+#039,Egg Bomb,¥3600,¥1500,---,---,30,,Pavo Real
+#040,Meteor Magnet,¥4000,¥1800,---,041,17,Attack two times.,Pavo Real
+#041,Meteor Hook,¥7000,¥3000,040,042,29,Attack two times.,Pavo Real
+#042,Meteor Spike,¥9100,¥4000,041,---,38,Attack two times.,Pavo Real
+#043,Strong Heart,¥2000,¥800,---,---,,Flip to extend the effect of HP drain and Poison.,Pavo Real
+#044,Strong Spirit,¥1500,¥1000,---,---,,Flip to extend the effect of ATK break.,Pavo Real
+#045,Strong Body,¥1500,¥1000,---,---,,Flip to extend the effect of DEF break.,Pavo Real
+#046,Strong 'n Proud,¥4000,¥2000,---,---,,Flip to extend the effect of Stun.,Pavo Real
+#047,Poison Scorpion,¥1200,¥300,---,058,,Flip at the start of battle to inflict all with HP Drain.,Pavo Real
+#048,Poison Skull,¥1000,¥300,---,051,,Flip at the start of battle to inflict all with ATK break.,Pavo Real
+#049,Poison Bones,¥1000,¥300,---,---,,Flip at the start of battle to inflict all with DEF break.,Pavo Real
+#050,Poison Chains,¥2000,¥1000,---,---,,Flip at the start of battle to inflict all with Stun.,Pavo Real
+#051,Rapier Glance,¥2000,¥800,048,---,,Inflict all with ATK Break at the start of battle.,Pavo Real
+#052,Love Charge,¥7000,¥3500,---,---,,Add one use to recovery pins. Does not affect Auto-activated pins.,Pavo Real
+#053,Guardian Angel,¥10000,¥5000,---,054,,Heal 50%. Doesn't take up a turn. Auto activates at 50% HP or lower. Uses cannot be increased.,Pavo Real
+#054,Archangel,¥12500,¥6000,053,---,,Heal 70%. Doesn't take up a turn. Auto activates at 30% HP or lower. Uses cannot be increased.,Pavo Real
+#055,Energy Factor,¥6000,¥3000,---,---,,Adds 1 to the usage limit of all pins. Does not affect Auto-activated pins.,Pavo Real
+#056,Speed Factor,¥13000,¥7000,---,---,,Halves the cooldown of pins (round up).,Pavo Real
+#057,Supply Factor,¥7000,¥3000,047,---,,Add one use to recovery pins. Does not affect Auto-activated pins.,Pavo Real
+#058,Chaos,¥2500,¥1000,---,---,,Inflict all with HP Drain at the start of battle.,Pavo Real
+#059,Pavo Real,¥10000,¥10000,---,---,,Increase Pavo Real pin attack by 50%.,Pavo Real
+#060,Lightning Moon,¥1700,¥800,---,---,16,Flip up to three times until you get tails. Attack for each heads.,Mus Rattus
+#061,Lightning Storm,¥3100,¥1200,---,---,30,Flip up to five times until you get tails. Attack for each heads.,Mus Rattus
+#062,Burning Cherry,¥3600,¥1500,---,"063, 064",20,Flip three times. Attack for each heads.,Mus Rattus
+#063,Burning Melon,¥4500,¥2000,062,---,25,Flip three times. Attack for each heads.,Mus Rattus
+#064,Burning Berry,¥5800,¥2900,062,---,32,Flip three times. Attack for each heads.,Mus Rattus
+#065,Aqua Monster,¥4200,¥2100,---,---,35,,Mus Rattus
+#066,Aqua Ghost,¥5900,¥2800,---,067,49,,Mus Rattus
+#067,Aqua Demon,¥7200,¥3600,066,---,60,,Mus Rattus
+#068,Cornered Rat,¥3000,¥1500,---,---,25,,Mus Rattus
+#069,Blast Warning,¥4300,¥2100,---,---,36,,Mus Rattus
+#070,Candle Service,¥6500,¥3000,---,---,36,Flip to attack all.,Mus Rattus
+#071,Shock Warning,¥7500,¥5000,---,---,18,Flip to Stun.,Mus Rattus
+#072,Kinect Warning,¥4800,¥2400,---,---,40,,Mus Rattus
+#073,Impact Warning,¥4800,¥2400,---,---,20,Attack two times.,Mus Rattus
+#074,Storm Warning,¥5200,¥2500,---,---,44,Flip 2 times. Attack for each heads.,Mus Rattus
+#075,Electric Warning,¥11700,¥5000,---,---,65,Flip three times. Attack for each heads.,Mus Rattus
+#076,Teleport Warning,¥1000,¥500,---,---,,Flip to dodge.,Mus Rattus
+#077,Shout,¥20000,¥10000,---,---,67,Attack all enemies. Flip to Stun for each enemy.,Mus Rattus
+#078,Psych Support,¥7000,¥3500,---,---,,Adds one use to all limited pins. Does not affect Auto-activated pins.,Mus Rattus
+#079,Stopper Spark,¥2000,¥800,---,---,,Inflict all with Stun at the start of battle.,Mus Rattus
+#080,Mus Rattus,¥10000,¥10000,---,---,,Increase Mus Rattus pin attack by 50%.,Mus Rattus
+#081,Masamune,¥9500,¥5000,---,"082, 083",15,Flip to Stun.,JotM
+#082,Onikiri,¥11000,¥6000,081,084,30,Flip to Stun.,JotM
+#083,Nenekiri,¥11000,¥6000,081,085,30,Flip to Stun.,JotM
+#084,Kanesada,¥13000,¥7000,082,---,49,Flip to Stun.,JotM
+#085,Enju,¥12000,¥6000,083,086,40,Flip to Stun.,JotM
+#086,Yoshimitsu,¥12700,¥6000,085,---,44,Flip to Stun.,JotM
+#087,Ichimonji,¥3000,¥1500,---,"088, 089",25,,JotM
+#088,Nikkari,¥4000,¥2000,087,---,33,,JotM
+#089,Mikazuki,¥4200,¥2000,087,---,35,,JotM
+#090,Shiro,¥6500,¥3000,---,097,54,,JotM
+#091,Unjo,¥6300,¥2500,---,092,35,Flip up to three times until you get tails. Attack for each heads.,JotM
+#092,Izanagi,¥7300,¥3000,091,---,41,Flip up to five times until you get tails. Attack for each heads.,JotM
+#093,Murasame,¥5400,¥3000,---,094,15,Attack three times.,JotM
+#094,Rakuyo,¥13000 (BAN),¥7000 (BAN),093,095,28,Attack three times.,JotM
+#095,Kusanagi,¥15000 (BAN),¥7500 (BAN),094,---,34,Attack three times.,JotM
+#096,Ohabari,¥11500,¥8000,---,---,32,Flip to Stun.,JotM
+#097,Zantetsu,¥18000 (BAN),¥10000 (BAN),090,---,49,Attack three times.,JotM
+#098,Mitama,¥10300,¥5000,---,---,57,Attack all enemies.,JotM
+#099,Izanami,¥2000,¥800,---,---,17,,JotM
+#100,Onmyo,¥4800,¥2400,---,---,27,Attack all enemies. Flip to Stun for each enemy.,JotM
+#101,Konohana,¥7000,¥3500,---,---,,Heal 30%.,JotM
+#102,Konohana Sakuya,¥6000,¥3500,---,---,,Heal 25%. Cures all statuses.,JotM
+#103,Jupiter of the Monkey,¥10000,¥10000,---,---,,Increase Jupiter of the Monkey pin attack by 50%.,JotM
+#104,Long Live the Rock,¥7500,¥7000,---,---,,Flip to Stun.,Hip Snake
+#105,Long Live the Ice,¥8000,¥7000,---,106,,Flip to Stun all.,Hip Snake
+#106,Long Live the Floe,¥10000,¥8000,105,---,,Stun all.,Hip Snake
+#107,Eyes Full of Hope,¥2500,¥1500,---,108,21,,Hip Snake
+#108,Eyes Full of Light,¥4400,¥2200,107,---,37,,Hip Snake
+#109,Hot Gaze,¥4000,¥2000,---,110,33,,Hip Snake
+#110,Sizzling Gaze,¥4700,¥2500,109,---,39,,Hip Snake
+#111,Cold Stare,¥4800,¥2500,106,112,40,,Hip Snake
+#112,Icy Stare,¥6400,¥3000,111,---,53,,Hip Snake
+#113,Wassup Thunder!,¥3100,¥1500,---,114,26,,Hip Snake
+#114,Wassup Lightning!,¥4000,¥2000,113,115,33,,Hip Snake
+#115,Wassup Voltage!,¥5000,¥2500,114,---,42,,Hip Snake
+#116,Indestructo Man,¥7000 (BAN),¥3500 (BAN),---,---,,Stuns are extended to two turns.,Hip Snake
+#117,Hip Snake,¥10000,¥10000,---,---,,Increase Hip Snake attack by 50%.,Hip Snake
+#118,Octo Squeeze,¥3500,¥2000,---,"119, 120",,Flip to Stun all. (Usable Once),Sheep Heavenly
+#119,Snail Squeeze,¥5000,¥3000,118,121,,Flip to Stun all. (Usable two times),Sheep Heavenly
+#120,Vacu Squeeze,¥5000,¥3000,118,121,,Flip to Stun all. (Usable two times),Sheep Heavenly
+#121,Gimme Dat Sheep,¥1500,¥500,119; 120,122; 123,,Flip a coin to deal half a target’s current HP (max 100). One-time use.,Sheep Heavenly
+#122,Gimme Dat Elephant,¥3000,¥1000,121,---,,Flip a coin to deal half a target’s current HP (max 200). One-time use.,Sheep Heavenly
+#123,Gimme Dat Hippo,¥3000,¥1000,121,---,,Flip a coin to deal half a target’s current HP (max 200). One-time use.,Sheep Heavenly
+#124,Crackle Pop Barrier,¥8000,¥4000,---,125,22,Flip to dodge. Two-time use.,Sheep Heavenly
+#125,Splish Splash Barrier,¥6000,¥5000,124,---,,"Heal 20%. If not attacked before the next turn, heal another 20%.",Sheep Heavenly
+#126,Creepy Weepy Barrier,¥7000,¥5000,---,---,51,Heal for the amount of damage done. Two-time use.,Sheep Heavenly
+#127,Whirlygig Juggle,¥1000,¥500,---,---,,Flip to dodge. Two-time use.,Sheep Heavenly
+#128,Healing Bunny,¥7000,¥4000,---,130,,Heal 30%.,Sheep Heavenly
+#129,Healing Flamingo,¥4000,¥3000,---,---,,"Heal 10%, Usable two times, doesn’t use a turn.",Sheep Heavenly
+#130,Healing Whale,¥10000,¥7000,128,---,,"Heal 15%, Usable two times, doesn’t use a turn.",Sheep Heavenly
+#131,Croc Leisure,¥6000,¥3000,---,132; 133,,Heal 25%. Can be used while Stunned.,Sheep Heavenly
+#132,Monkey Leisure,¥6000,¥3000,131,---,,Heal 25%. Cures HP Drain or Poison.,Sheep Heavenly
+#133,Bear Leisure,¥6000,¥3000,131,134,,Heal 25%. Cures ATK Break or DEF Break.,Sheep Heavenly
+#134,Squirrel Leisure,¥6500,¥3000,133,---,,Heal 20%. Cures all statuses.,Sheep Heavenly
+#135,Sparkle Charge,¥7000,¥3500,---,---,,Add one use to recovery pins. Does not affect Auto-activated pins.,Sheep Heavenly
+#136,Handsfree Healing,¥10000,¥5000,---,---,,Heal 50%. Doesn't take up a turn. Auto activates at 50% HP or lower. Uses cannot be increased.,Sheep Heavenly
+#137,Sheep Heavenly,¥10000,¥10000,---,---,,Increase Sheep Heavenly pin attack by 50%.,Sheep Heavenly
+#138,Distortion,¥9300,¥4500,---,---,39,Attack two times.,Tigre Punks
+#139,Velocity Attack,¥10900,¥8000,---,140,29,Stuns the target.,Tigre Punks
+#140,Velocity Tackle,¥7700,¥4000,139,---,41,Attack all enemies.,Tigre Punks
+#141,Demon's Hatred,¥8600,¥4500,---,---,72,,Tigre Punks
+#142,Go 2 Hell,¥9300,¥5000,---,143,26,Attack three times.,Tigre Punks
+#143,Go 2 Heaven,¥9300,¥5000,142,---,26,Attack three times.,Tigre Punks
+#144,Lightning Anger,¥12300,¥6000,---,145,69,Attack all enemies.,Tigre Punks
+#145,Lightning Rage,¥12000,¥6000,144,---,67,Attack all enemies.,Tigre Punks
+#146,LIVE!,¥12300,¥8000,---,---,27,Attack all enemies. Flip to Stun for each enemy.,Tigre Punks
+#147,Peace Full,¥7000,¥4000,---,148,,Heal 30%.,Tigre Punks
+#148,Thanx,¥6000,¥3000,147,---,,Heal 25%. Cures HP Drain.,Tigre Punks
+#149,D.I.Y,¥3000,¥1000,---,---,,ATK Breaks are extended by one turn.,Tigre Punks
+#150,Tigre Punks,¥10000,¥10000,---,---,,Increase Tigre Punks pin attack by 50%.,Tigre Punks
+#151,"One Stone, Many Birds",¥5800,¥2500,---,"152, 153",32,Flip to attack again.,Dragon Couture
+#152,"One Stroke, Vast Wealth",¥7900,¥3500,151,---,44,Flip to attack again.,Dragon Couture
+#153,"One Grain, Infinite Promise",¥9000,¥4500,151,---,50,Flip to attack again.,Dragon Couture
+#154,"Self Found, Others Lost",¥8400,¥4200,---,---,35,Attack two times.,Dragon Couture
+#155,"Fiery Spirit, Spirited Fire",¥3000,¥1500,---,"156, 157",25,,Dragon Couture
+#156,"Flames Afar, Foes Aflame",¥7200,¥3500,155,158,60,,Dragon Couture
+#157,"Final Pyre, All Expired",¥5600,¥2800,155,---,47,,Dragon Couture
+#158,Blue Blood Burns Blue,¥8000,¥3500,156,---,55,Flip to inflict HP Drain.,Dragon Couture
+#159,"Live Slow, Die Fast",¥3000,¥1500,---,"160, 161",25,,Dragon Couture
+#160,"Local Fire, Distant Sea",¥5100,¥2500,159,---,43,,Dragon Couture
+#161,"June Hearth, January Fan",¥3000,¥1500,159,---,25,,Dragon Couture
+#162,"Swift Storm, Swift End",¥4800,¥2400,---,163,27,Attack all enemies.,Dragon Couture
+#163,"Black Sky, White Bolt",¥6500,¥3000,162,164,36,Attack all enemies.,Dragon Couture
+#164,"Follow Suit, Fall in Turn",¥7400,¥3500,163,---,41,Attack all enemies.,Dragon Couture
+#165,Dragon Couture,¥10000,¥10000,---,---,,Increase Dragon Couture pin attack by 50%.,Dragon Couture
+#166,Lolita Bat,¥6000,¥3000,---,167,50,,Lapin Angelique
+#167,Skull Rabbit,¥7200,¥3500,166,---,60,,Lapin Angelique
+#168,Kaleidoscope,¥9500,¥4500,---,---,53,Flip to attack again.,Lapin Angelique
+#169,Lolita Emblem,¥11000,¥55000,---,170,46,Attack two times.,Lapin Angelique
+#170,Lolita Chopper,¥11300,¥5500,169,---,47,Attack two times.,Lapin Angelique
+#171,Link Spider,¥5500,¥2500,---,172,46,,Lapin Angelique
+#172,Web Spider,¥5800,¥2900,171,173,48,,Lapin Angelique
+#173,Network Spider,¥6000,¥3000,172,---,50,,Lapin Angelique
+#174,Lolita Mic,¥15500,¥7500,---,---,44,Attack all enemies. Flip to Stun for each enemy.,Lapin Angelique
+#175,Spider's Silk,¥9100,¥4500,---,---,38,Attack two times.,Lapin Angelique
+#176,Leopard,¥7000,¥4000,---,177,,Heal 30%.,Lapin Angelique
+#177,Lolita Skull,¥6500,¥3000,176,---,,Heal 25%. Cures all statuses.,Lapin Angelique
+#178,Black Rose,¥3000,¥1000,---,---,,Inflict all with Stun at the start of battle.,Lapin Angelique
+#179,Lapin Angelique,¥10000,¥10000,---,---,,Increase Lapin Angelique pin attack by 50%.,Lapin Angelique
+#180,Thunder Pawn,¥7200,¥3500,---,181,40,Attack all enemies.,Pegaso
+#181,Lightning Pawn,¥8800,¥4000,180,---,49,Attack all enemies.,Pegaso
+#182,Aqua Pawn,¥4400,¥4000,---,---,49,,Pegaso
+#183,Swing Bishop,¥8100,¥5000,---,184,45,Flip to attack again.,Pegaso
+#184,Pegaso Bishop,¥8300,¥5000,183,---,46,Flip to attack again.,Pegaso
+#185,King Arthur,¥8400,¥5000,---,186,70,,Pegaso
+#186,Excalibur,¥10200 (BAN),¥7000 (BAN),185,---,85,,Pegaso
+#187,Thunder Rook,¥8300,¥5000,---,188,46,Flip three times. Attack for each heads.,Pegaso
+#188,Lightning Rook,¥9400,¥5000,187,---,52,Flip three times. Attack for each heads.,Pegaso
+#189,Jack's Knight,¥5800,¥3000,---,"190, 191",49,,Pegaso
+#190,King's Knight,¥6100,¥3000,189,---,51,,Pegaso
+#191,Queen's Knight,¥5800,¥3000,189,---,49,,Pegaso
+#192,Her Royal Highness,¥7000,¥3500,---,---,,Double the usage limit of all pins. Does not affect Auto-activated pins,Pegaso
+#193,Pegaso,¥10000,¥10000,---,---,,Increase Pegaso pin attack by 50%.,Pegaso
+#194,Lazy Bomber,¥15800,¥10000,---,---,69,Flip to stun all.,Wild Boar
+#195,Flower of Flame,¥4900,¥2500,---,196,41,,Wild Boar
+#196,Flower of Fire,¥6100,¥3000,195,---,51,,Wild Boar
+#197,Kewl Line,¥3100,¥1000,---,"198, 199",52,"Charges for three rounds, then deals 4x damage.",Wild Boar
+#198,Dope Line,¥6900,¥3300,197,---,115,"Charges for three rounds, then deals 4x damage.",Wild Boar
+#199,Wild Line,¥3300,¥1000,197,---,55,"Charges for three rounds, then deals 4x damage.",Wild Boar
+#200,Fly Line,¥13700,¥8000,---,201,52,Stuns the target.,Wild Boar
+#201,Fresh Line,¥14000,¥8000,200,---,54,Stuns the target.,Wild Boar
+#202,Microcosmic Pull,¥9600,¥4500,---,203,40,Attack two times.,Wild Boar
+#203,Cosmic Pull,¥10300,¥5000,202,204,43,Attack two times.,Wild Boar
+#204,Macrocosmic Pull,¥11300,¥5500,203,---,47,Attack two times.,Wild Boar
+#205,Diss,BANNED,BANNED,---,---,,Stuns are extended to 2 turns.,Wild Boar
+#206,Wild Boar,¥10000,¥10000,---,---,,Increase Wild Boar pin attack by 50%.,Wild Boar
+#207,Big Bang,BANNED,BANNED,---,---,125,Attack all enemies.,Gatito
+#208,Big Crunch,BANNED,BANNED,---,---,125,Attack all enemies.,Gatito
+#209,Swift as the Wind,BANNED,BANNED,---,---,54,Flip to roll another 20 on all.,Gatito
+#210,Hushed as the Wood,BANNED,BANNED,---,---,54,Flip to roll another 20 on all.,Gatito
+#211,Fierce as the Flame,BANNED,BANNED,---,---,54,Flip to roll another 20 on all.,Gatito
+#212,Stalwart as the Mount,BANNED,BANNED,---,---,54,Flip to roll another 20 on all.,Gatito
+#213,Black Mars,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#214,Black Jupiter,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#215,Black Uranus,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#216,Black Venus,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#217,Black Saturn,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#218,Black Mercury,BANNED,BANNED,---,---,30,Heal for the amount of damage done. Three-time use.,Gatito
+#219,Righty Cat,BANNED,BANNED,---,---,,Negates cooldowns.,Gatito
+#220,Brainy Cat,BANNED,BANNED,---,---,,Negates cooldowns.,Gatito
+#221,Lefty Cat,BANNED,BANNED,---,---,,Negates cooldowns.,Gatito
+#222,One Jump from Eden,BANNED,BANNED,226,223,,Allows for one extra bounce per day.,Gatito
+#223,One Skip from Eden,BANNED,BANNED,222,224,,Allows for one extra bounce per day.,Gatito
+#224,One Hop from Eden,BANNED,BANNED,223,225,,Allows for one extra bounce per day.,Gatito
+#225,One Step from Eden,BANNED,BANNED,224,226,,Allows for one extra bounce per day.,Gatito
+#226,Eden's Door,BANNED,BANNED,225,222,,Allows for one extra bounce per day.,Gatito
+#227,Visionary Blend,BANNED,BANNED,---,---,,Heal 50%. Doesn't take up a turn. Auto activates at 50% HP or lower. Uses cannot be increased.,Gatito
+#228,Red Skull,BANNED,BANNED,---,---,,Skip every other turn.,Gatito
+#229,Gatito,BANNED,BANNED,---,---,,Increase Gatito pin attack by 50%.,Gatito
+#230,Tin Pin Fire,¥2400,¥1000,---,---,20,,Unbranded Tin Pin
+#231,Tin Pin Custom,¥3600,¥1500,---,---,20,Flip to attack again.,Unbranded Tin Pin
+#232,Tin Pin Wind,¥5400,¥2500,---,---,30,Flip to attack again.,Unbranded Tin Pin
+#233,Tin Pin Blade,¥9400,¥4500,---,---,52,Attack all enemies.,Unbranded Tin Pin
+#234,Tin Pin Wheel,¥10300,¥5000,---,---,23,Stuns the target.,Unbranded Tin Pin
+#235,Tin Pin Dash,¥8000,¥4000,---,---,44,Attack all enemies.,Unbranded Tin Pin
+#236,Tin Pin Thrift,¥5000,¥2500,---,---,,Automatically sacrifice 50% your max HP to increase ATK by 20 as long as you remain under 50%. Disables auto-heal.,Unbranded Tin Pin
+#237,Tin Pin Hellfire,¥5000,¥2500,---,---,28,Flip three times. Attack for each heads.,Unbranded Tin Pin
+#238,Tin Pin Sunscorch,¥4000,¥2000,---,---,28,Inflict HP Drain.,Unbranded Tin Pin
+#239,Tin Pin Rocker,¥16500,¥10000,---,---,50,Attack all enemies. Flip to Stun for each enemy.,Unbranded Tin Pin
+#240,Tin Pin Artist,¥3100,¥1500,---,---,26,,Unbranded Tin Pin
+#241,Tin Pin Devil,¥5000,¥2500,---,---,42,,Unbranded Tin Pin
+#242,Tin Pin Ifrit,¥5500,¥2500,---,---,46,,Unbranded Tin Pin
+#243,Tin Pin Shiva,¥5900,¥3000,---,---,49,,Unbranded Tin Pin
+#244,Tin Pin Golem,¥6000,¥3000,---,---,33,Attack all enemies.,Unbranded Tin Pin
+#245,Tin Pin Bahamut,¥13500,¥8000,---,---,75,Attack all enemies.,Unbranded Tin Pin
+#263,Lucky Star,,,---,---,,Give to the Composer for a special prize…,Unbranded Misc
+#264,Lady Luck,,,---,---,,Give to the Composer for a special prize…,Unbranded Misc
+#265,Lucky Panda,,,---,---,,Give to the Composer for a special prize…,Unbranded Misc
+#266,Pyrokinesis,¥1300,¥500,---,---,11,,Unbranded Misc
+#267,Shockwave,¥1300,¥500,---,---,11,,Unbranded Misc
+#268,Cure Drink,¥7000,¥4000,---,---,,Heal 30%.,Unbranded Misc
+#269,Force Rounds,¥1500,¥500,---,---,13,,Unbranded Misc
+#270,Psychokinesis,¥1400,¥500,---,---,12,,Unbranded Misc
+#271,Thunderbolt,¥1500,¥500,---,---,13,,Unbranded Misc
+#272,The Eyes Have It,¥4400,¥2000,---,---,37,,Unbranded Misc
+#273,I Live for Food,¥7000,¥4000,---,---,,Heal 30%.,Unbranded Misc
+#274,"Walk on, Walk off",¥3000,¥1000,---,---,,Flip to dodge.,Unbranded Misc
+#275,Me Time is Free Time,¥5000,¥2500,---,---,,Flip to stun all.,Unbranded Misc
+#276,Fuji Yama,¥3500,¥1700,---,---,29,Attack two times.,Unbranded Misc
+#277,Daruma,¥3500,¥1700,---,---,29,Attack two times.,Unbranded Misc
+#278,Sushi,¥3500,¥1700,---,---,29,Attack two times.,Unbranded Misc
+#279,Shinobi,¥3500,¥1700,---,---,29,Attack two times.,Unbranded Misc

@@ -42,6 +42,7 @@ a:hover{
   padding-left:5px;
 }
 .sidenav{
+  text-align:center;
   position:fixed;
   padding-top:40px;
   display:inline-block;
@@ -50,7 +51,7 @@ a:hover{
   margin-left: 20px;
   margin-right:20px;
   width:120px;
-  color:black;
+  color:white;
   background-color: #252525;
   box-sizing:border-box;
   overflow-y:auto;
@@ -64,7 +65,10 @@ a:hover{
   height:auto;
   width:auto;
 }
-
+.time{
+  display:block;
+  padding:10px 0;
+}
 #logo{
   opacity:1;
 }
@@ -96,6 +100,33 @@ a:hover{
   text-align:center;
   font-weight:bold;
 }
+/* Right sidebar */
+.rightbar{
+  color:white;
+  position:fixed;
+  bottom:0;
+  z-index:10;
+  background-color:black;
+  width:inherit;
+  max-width:inherit;
+  opacity:.9;
+  padding-top:10px;
+}
+.rightbar > button:first-child{
+  outline: none;
+  color:lightgray;
+  float:right;
+}
+#rightcontainer{
+  margin-top:20px;
+  padding:10px;
+  max-height:50vh;
+  display:none;
+}
+/* Eating */
+#eatit{
+  color:white;
+}
 /* Content */
 .container{
   position: fixed;
@@ -113,8 +144,7 @@ a:hover{
   margin:0 auto;
   color:white;
   min-width:400px;
-  padding:20px;
-  padding-top:40px;
+  padding:40px 20px;
   box-sizing:border-box;
   overflow:auto;
 }
@@ -143,6 +173,7 @@ a:hover{
 .black{color:black;}
 .pencil{font-size:1.2em;float:right;display:inline-block;}
 .clear{overflow:auto;clear:both;}
+.nobullet{list-style:none;}
 #errorcorner{
   background-color:red;
   color:white;

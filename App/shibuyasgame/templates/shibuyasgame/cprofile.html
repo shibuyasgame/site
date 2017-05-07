@@ -1,7 +1,6 @@
 {% extends "shibuyasgame/base.html" %}
 {% load ex %}
 
-
 {% block otherModTools %}
 <br>
 <a href="{% url 'addItem' char.char_name char.suffix 'p' %}">Add Pin</a>
@@ -58,9 +57,9 @@
           <i class="fa fa-tumblr-square" aria-hide="true"></i>
           <div class="tooltiptext sal">{{char.mun.blog}}</div></div>
         {% endif %}
-          <div class="tooltip">
-          <i class="fa fa-user" aria-hide="true"></i>
-          <div class="tooltiptext sal">{{char.mun.user.first_name}}</div></div>
+          <div class="tooltip"><a class="black" href="{% url 'uprofile' char.mun.user %}"
+          <i class="fa fa-user" aria-hide="true"></i></a>
+          <div class="tooltiptext sal">{char.mun.user.first_name}}</div></div>
         </h1></div>
       </div>
       <h1 class="notimage">{{char.char_name}}</h1><br>
@@ -148,7 +147,7 @@
           <tr>
             <th>Name</th><th>Boosts</th><th>Heal</th><th class="scol">Amt.</th>
             {% if char.mun == you or perms.shibuyasgame.is_mod %}
-              <th></th>
+              <th class="scol">Eat</th>
             {% endif %}
           </tr>
         </thead>
@@ -164,7 +163,7 @@
             {% endif %}
           </tr>
           {% empty %}
-          <tr><td align="center" {% if char.mun == you or perms.shibuyasgame.is_mod %}colspan="4"{% else %}colspan="5"{% endif %}> EMPTY </tr></td>
+          <tr><td align="center" {% if char.mun == you or perms.shibuyasgame.is_mod %}colspan="5"{% else %}colspan="4"{% endif %}> EMPTY </tr></td>
           {% endfor %}
         </tbody>
       </table>
@@ -182,7 +181,7 @@
           <td class="w50">{% if p.item.booster == False %}{% boost p.item.atk total.atk p.item.brand boosted %}{% endif %}</td>
           <td class="w300">{{p.item.eff}}</td>
           {% if char.mun == you or perms.shibuyasgame.is_mod %}
-          <td><button class="dequipper" value="{{p.id}}">Dequip</button></td>
+          <td class="scol"><button class="dequipper" value="{{p.id}}">Dequip</button></td>
           {% endif %}
         </tr>
         {% empty %}
@@ -202,7 +201,7 @@
             <td class="w300">{{t.item.eff}}</td>
             <td class="smal w50">{{t.item.brv}} BRV</td>
             {% if char.mun == you or perms.shibuyasgame.is_mod %}
-            <td><button class="dequipper" value="{{t.id}}">Dequip</button></td>
+            <td class="scol"><button class="dequipper" value="{{t.id}}">Dequip</button></td>
             {% endif %}
           </tr>
         {% empty %}
@@ -223,7 +222,7 @@
           <td class="w50">{% if p.item.booster == False %}{% boost p.item.atk total.atk p.item.brand boosted %}{% endif %}</td>
           <td class="w300">{{p.item.eff}}</td>
           {% if char.mun == you or perms.shibuyasgame.is_mod %}
-          <td><button class="equipper" value="{{p.id}}">Equip</button></td>
+          <td class="scol"><button class="equipper" value="{{p.id}}">Equip</button></td>
           {% endif %}
         </tr>
         {% empty %}
@@ -242,8 +241,8 @@
           </td>
           <td class="w300">{{t.item.eff}}</td>
           <td class="smal w50">{{t.item.brv}} BRV</td>
-          <td>
           {% if char.mun == you or perms.shibuyasgame.is_mod %}
+          <td class="scol">
             {% if t.item.brv > info.brv %}
             <div class="tooltip">
               <sup class='uline'><i class='fa fa-times' aria-hide='true'></i></sup>
@@ -252,8 +251,8 @@
             {% else %}
             <button class="equipper" value="{{t.id}}">Equip</button>
             {% endif %}
-          {% endif %}
           </td>
+          {% endif %}
         </tr>
       {% empty %}
         <tr><td>EMPTY!</td></tr>
@@ -271,4 +270,37 @@
 {% else %}
 <div class="error">Seems like this profile hasn't been activated by a moderator yet...</div>
 {% endif %}
+{% endblock %}
+
+
+
+{% block rightbar %}
+<div class="rightbar">
+  <button id="slide">▲</button>
+  <div id="rightcontainer">CONTENT</div>
+</div>
+{% endblock %}
+
+{% block templates %}
+<template id="main_food_template">
+  <table>
+    <thead><tr class="boldy">
+        <th>NAME</th><th>HP</th><th>ATK</th><th>DEF</th><th>HEAL</th><th></th><th></th><th></th>
+    </tr><thead>
+    <tbody id="to_eat_list">
+    </tbody>
+  </table>
+  <table>
+    <tr id="food_totals">
+      <td class="bold">Total</td><td>HP</td><td>ATK</td><td>DEF</td><td>HEAL</td><td></td><td><button id="eatit">Eat</button></td><td></td>
+    </tr>
+  </table>
+</template>
+
+<template id="food_entry_template">
+  <tr id="FOODID">
+    <td>NAME</td><td>HP</td><td>ATK</td><td>DEF</td><td>HEAL</td><td>NUM</td>
+    <td><button class="addFood">+</button></td><td><button class="subFood">-</button></td>
+  </tr>
+</template>
 {% endblock %}

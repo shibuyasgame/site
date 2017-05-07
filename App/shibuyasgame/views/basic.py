@@ -27,6 +27,7 @@ from shibuyasgame.helpers import *
 import shibuyasgame.s3 as s3
 import django.utils.dateparse as dateparse
 import time
+import datetime
 
 
 # Basics
@@ -86,17 +87,14 @@ def confirm(request, username, token):
 
     # Otherwise token was valid, activate the user.
     user.is_active = True
-    # TODO everyone currently has moderator permissions
-    composer = Group.objects.get(name="Composer")
-    user.groups.add(composer)
-    user.save()
     return render(request, 'shibuyasgame/message.html',
         {'message': "Your account has been activated! Please login to continue."})
 
 
 # Lookups
 def searchLanding(request):
-    context = {'forms':{SearchForm()}, 'button': "Search", 'action': str(reverse("searchLanding"))}
+    context = {'forms':{SearchForm()},
+        'button': "Search", 'action': str(reverse("searchLanding"))}
     if checkUser(request):
         context['you'] = UserProfile.objects.get(user=request.user)
     if request.method == 'GET':
@@ -117,14 +115,10 @@ def viewUser(request, username):
     context = {}
     if checkUser(request):
         context['you'] = UserProfile.objects.get(user=request.user)
-    try:
-        user = User.objects.get(username=username)
-        profile = UserProfile.objects.get(user=user)
-        context['chars'] = profile.charprofile_set.all()
-        context['profile'] = profile;
-    except (User.DoesNotExist, UserProfile.DoesNotExist):
-        context['error'] = "No such user."
-        return render(request, 'shibuyasgame/message.html', context)
+    user = get_object_or_404(User, username=username)
+    profile = get_object_or_404(UserProfile, user=user)
+    context['chars'] = profile.characters.all()
+    context['profile'] = profile;
     return render(request, 'shibuyasgame/uprofile.html', context)
 
 def viewChar(request, charname, suffix):
@@ -132,45 +126,36 @@ def viewChar(request, charname, suffix):
     template = 'shibuyasgame/cprofile.html'
     if checkUser(request):
         context['you'] = UserProfile.objects.get(user=request.user)
-        check = True
-    try:
-        char = CharProfile.objects.get(char_name=charname, suffix=suffix)
-        context['char'] = char;
-        info = CharStats.objects.get(character=char, week=char.week)
-        thread = {'hp': 0, 'atk':0, 'def':0}
-        if info.inventory:
-            context['finventory'] = info.inventory.filter(item_type=ContentType.objects.get_for_model(Food))
-            pinventory = info.inventory.filter(item_type=ContentType.objects.get_for_model(Pin))
-            tinventory = info.inventory.filter(item_type=ContentType.objects.get_for_model(Thread))
-            context['pinventory_e'] = pinventory.filter(is_equipped=True)
-            context['tinventory_e'] = tinventory.filter(is_equipped=True)
-            context['pinventory'] = pinventory.filter(is_equipped=False)
-            context['tinventory'] = tinventory.filter(is_equipped=False)
-            boosters = Pin.objects.filter(booster=True)
-            context['boosted'] = pinventory.filter(item_id__in=boosters)
-            thread=calculate_thread_stats(info.pronouns, context['tinventory_e'])
-        context['info'] = info
-        context['pronouns'] = translatePronouns(info.pronouns)
-        total ={'hp':info.base_hp + thread['hp'] + info.misc_hp,
-                'atk':info.base_atk + thread['atk'] + info.misc_atk,
-                'def':info.base_def + thread['def'] + info.misc_def}
-        context['total'] = total;
-        context['thread'] = thread;
-    except (CharProfile.DoesNotExist):
-        context['error'] = "No such character."
-        return render(request, 'shibuyasgame/message.html', context)
+    char = get_object_or_404(CharProfile, char_name=charname, suffix=suffix)
+    info = get_object_or_404(CharStats, character=char, week=char.week)
+    context['char'] = char;
+    thread = {'hp': 0, 'atk':0, 'def':0}
+    if info.inventory:
+        context['inventory'] = info.inventory.filter(is_equipped=False)
+        context['finventory'] = info.inventory.filter(item_type=ContentType.objects.get_for_model(Food))
+        pinventory = info.inventory.filter(item_type=ContentType.objects.get_for_model(Pin))
+        tinventory = info.inventory.filter(item_type=ContentType.objects.get_for_model(Thread))
+        context['pinventory_e'] = pinventory.filter(is_equipped=True)
+        context['tinventory_e'] = tinventory.filter(is_equipped=True)
+        context['pinventory'] = pinventory.filter(is_equipped=False)
+        context['tinventory'] = tinventory.filter(is_equipped=False)
+        boosters = Pin.objects.filter(booster=True)
+        context['boosted'] = pinventory.filter(item_id__in=boosters)
+        thread=calculate_thread_stats(info.pronouns, context['tinventory_e'])
+    context['info'] = info
+    context['pronouns'] = translatePronouns(info.pronouns)
+    total ={'hp':info.base_hp + thread['hp'] + info.misc_hp,
+            'atk':info.base_atk + thread['atk'] + info.misc_atk,
+            'def':info.base_def + thread['def'] + info.misc_def}
+    context['total'] = total;
+    context['thread'] = thread;
     return render(request, template, context)
 
 def viewPost(request, pid):
     context = {}
     if checkUser(request):
         context['you'] = UserProfile.objects.get(user=request.user)
-    try:
-        post = Post.objects.filter(id=pid)
-        context['posts'] = post
-    except Post.DoesNotExist:
-        context['error'] = "Post not found."
-        return render(request, 'shibuyasgame/message.html', context)
+    context['posts'] = {get_object_or_404(Post, id=pid)}
     return render(request, 'shibuyasgame/index.html', context)
 
 def listItems(request):
@@ -194,11 +179,3 @@ def allCharacters(request):
         context['you'] = UserProfile.objects.get(user=request.user)
     context['list'] = CharProfile.objects.all()
     return render(request, 'shibuyasgame/userlist.html', context)
-
-### JSON
-def getInventory(request, charname, suffix):
-    char = get_object_or_404(CharProfile, char_name=charname, suffix=suffix)
-    charstats = get_object_or_404(CharStats, character=char)
-    items = charstats.inventory
-    response_text = serializers.serialize('json', items)
-    return HttpResponse(response_text, content_type='application/json')

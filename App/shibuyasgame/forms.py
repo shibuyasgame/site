@@ -1,6 +1,7 @@
+import pytz
 from django import forms
-
 from shibuyasgame.models import *
+from timezone_field import TimeZoneFormField
 import re
 
 MAX_UPLOAD_SIZE = 2500000
@@ -84,7 +85,7 @@ class EditUserForm(forms.ModelForm):
     loc = forms.CharField(label="Location", max_length=100, required=False)
     skype = forms.CharField(max_length=100, required=False)
     blog = forms.CharField(max_length=100, required=False)
-    timezone = forms.CharField(max_length=100, required=False)
+    timezone = TimeZoneFormField()
     picture = forms.FileField(required=False)
     class Meta:
         model = UserProfile

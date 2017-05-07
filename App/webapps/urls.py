@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
+handler404 = 'shibuyasgame.views.handlers.handle404'
+handler403 = 'shibuyasgame.views.handlers.handle403'
+handler500 = 'shibuyasgame.views.handlers.handle500'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 

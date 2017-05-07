@@ -16,7 +16,7 @@
   {% block imports %}{% endblock %}
   <title>{% block title %}The Reaper's Game{% endblock %}</title>
 </head>
-
+{% load ex %}
 
 
 <body>
@@ -40,8 +40,11 @@
 <!-- Sidenav -->
 <div class="sidenav">
   <!-- links -->
-  <a href="{% url 'home' %}" id="logo"><img src="http://imgur.com/zEIWyrA.png"/></a>
+  <a href="{% url 'home' %}" id="logo">THE REAPER'S GAME</a>
   <div class="links">
+    <div class="time">
+    Server Time<br>
+    <span id="time">{% autoescape off %}{% get_time %}{% endautoescape %}</span></div>
     <a href="{% url 'home' %}">Home</a>
     {% if you %}
     <a href="{% url 'uprofile' you.user.username %}">{{you.name}}</a>
@@ -78,8 +81,12 @@
 {% block content %}
 {% endblock %}
 </div>
-</div>
 
+{% block rightbar %}
+{% endblock %}
+</div>
+{% block templates %}
+{% endblock %}
 <div id="errorcorner"></div>
 </body>
 </html>

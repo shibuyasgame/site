@@ -1,0 +1,12 @@
+{% extends "shibuyasgame/base.html" %}
+
+{% block content %}
+<h4>Log</h4>
+<table>
+  <tr><th>Who</th><th>What</th><th>Details▶</th><th>Time</th></tr>
+{% for entry in log %}
+  <tr><td>{{entry.perp}}</td><td>{{entry.action}}</td><td>{{entry.details}}</td><td>{{entry.time}}</td></tr>
+{% endfor %}
+</table>
+
+{% endblock %}

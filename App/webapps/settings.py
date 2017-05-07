@@ -28,7 +28,7 @@ X_EMAIL_PASS = config.get('SETTINGS', 'EmailPassword')
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '*ac)=pct(iyy^xv&xx+8!7qmaz3lx5v=0(l77b%g$2m)s00oa_'
+SECRET_KEY = config.get('SETTINGS', 'SecretKey')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'timezone_field',
     'shibuyasgame',
 ]
 

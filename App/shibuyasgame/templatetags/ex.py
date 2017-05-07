@@ -1,4 +1,7 @@
 from django import template
+import shibuyasgame.helpers as helpers
+import datetime
+import pytz
 
 register = template.Library()
 
@@ -37,3 +40,7 @@ def thread_calc(hp_val, atk_val, def_val, bonus_hp, bonus_atk, bonus_def, condit
         atk_val = atk_val + bonus_atk
         def_val = def_val + bonus_def
     return cleanup(hp_val, atk_val, def_val)
+
+@register.simple_tag
+def get_time():
+    return helpers.formatTime(datetime.datetime.now())
